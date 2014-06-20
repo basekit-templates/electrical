@@ -1,0 +1,14 @@
+<div class="footer">
+	<div class="company">
+		{{widget('logo', 'w_logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+		{{widget('companyname', 'w_companyname', {"business": "Electrical"})|raw}}
+		{{widget('profile', 'fp01', { 'profileType':'strapline' })|raw}}
+	</div>
+	<div class="footer-profile">
+		{{widget('profile', 'fp02', { 'profileType':'socialicons' })|raw}}
+		{{widget('profile', 'fp03', { 'profileType':'twitter' })|raw}}
+	</div>
+</div>
+<div class="copyright">
+	{{widget('profile', 'fp04', { 'profileType':'copyright' })|raw}}
+</div>

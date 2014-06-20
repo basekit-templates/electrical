@@ -1,0 +1,18 @@
+<div class="header">
+	<div class="profile-bar">
+		<div class="p01">
+			{{widget('profile', 'w_profile01', { 'profileType':'address' })|raw}}
+		</div>
+		<div class="p02">
+			{{widget('profile', 'w_profile02', { 'profileType':'email' })|raw}}
+		</div>
+		<div class="p03">
+			{{widget('profile', 'w_profile03', { 'profileType':'phone' })|raw}}
+		</div>
+	</div>
+	<div class="nav-bar">
+		{{widget('logo', 'w_logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+		{{widget('companyname', 'w_companyname', {"business": "Electrical"})|raw}}
+		{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+	</div>
+</div>

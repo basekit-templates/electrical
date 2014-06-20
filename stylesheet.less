@@ -1,0 +1,470 @@
+@import "@{templateCommon}/basekit-bootstrap.less";
+
+@import "@{templateLocal}/css/widgets.less";
+@import "@{templateLocal}/css/text-content.less";
+
+// =============================================================================================
+
+// Vertical space between widgets
+@block-v-space: 70px;
+
+// Main Layout Vertical Spacing
+@layout-v-space: 50px;
+
+
+// =============================================================================================
+// MAIN LAYOUT
+
+body {
+	background: @color-swatch1;
+}
+
+
+// Vertical spacing for block widgets
+.block {
+	margin-bottom: @block-v-space;
+	@media @tablet {
+		margin-bottom: (@block-v-space / 2);
+	}
+	@media @mobile {
+		margin-bottom: (@block-v-space / 3);
+	}
+}
+
+
+.header {
+	.profile-bar {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+
+		padding: 0 @layout-v-space;
+
+		@color-profile-bg: lighten(@color-swatch1, 10%);
+		background: @color-profile-bg;
+
+
+		.p01, .p02, .p03 {
+			
+		}
+		.p01 {
+			flex-grow: 2;
+		}
+		.p02 {
+			margin-left: @layout-v-space;
+		}
+		.p03 {
+			margin-left: @layout-v-space / 2;
+		}
+
+		.bk-profile-address p {
+			display: inline-block;
+			margin-right: .4em;
+			&:after {
+				content: ",";
+			}
+			&:last-child:after {
+				content: none;
+			}
+		}
+
+		.bk-profile-phone {
+			&:before {
+				content: "";
+				background-image: image('/images/ico-phone.png');
+				width: 16px;
+				height: 17px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 0.4em;
+			}
+		}
+
+		.bk-profile-email a {
+			color: @color-swatch5;
+			&:before {
+				content: "";
+				background-image: image('/images/ico-mail.png');
+				width: 17px;
+				height: 13px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 0.4em;
+			}
+		}
+	}
+
+	.nav-bar {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-top: 50px;
+		margin-bottom: @block-v-space;
+		padding: 0 0 0 @layout-v-space;
+
+		.widget.logo {
+			margin-right: @layout-v-space / 2;
+			img {
+				display: block;
+			}
+		}
+		.widget.companyname {
+			a {
+				color: @color-swatch2;
+			}
+		}
+		.widget.extendednavigation {
+			flex-grow: 2;
+			margin-bottom: 0;
+			text-align: right;
+		}
+	}
+}
+
+
+
+
+// ================================================================================================
+// Widget: EXTENDED NAVIGATION
+@extendednavigation-bottom-m: 0;
+@extendednavigation-pull-vm: 10px;
+@extendednavigation-v-space: 16px;
+
+// Cancel floating
+div.widget .extendednavigation ul.align-left, div.widget.extendednavigation ul.align-left,
+div.widget .extendednavigation ul.align-right, div.widget.extendednavigation ul.align-right {
+	float: none !important;
+}
+
+.widget.extendednavigation {
+	margin-bottom: 0;
+
+	.extendednavigation > ul {
+		display: inline-block;
+		background: @color-swatch6;
+		border-radius: 200px 0 0 200px;
+		padding-left: @extendednavigation-v-space;
+		padding-right: @layout-v-space / 2;
+	}
+
+	ul {
+		
+
+		&.align-center, &.align-left, &.align-right {
+			
+		}
+		
+		@media @tablet {
+			padding-top: (@pull-icon-size + 20);
+		}
+
+		// Menu aligning
+		&.align-center {
+			text-align: center;
+		}
+		&.align-left{
+			text-align: left;
+		}
+		&.align-right {
+			text-align: right;
+		}
+
+		// Menu Item
+		li {
+			float: none;
+			display: inline-block;
+
+			a {
+				padding: 0 @extendednavigation-v-space;
+			}
+
+			// Folder item
+			&.folder {
+				.text {
+					padding: 0 @extendednavigation-v-space;
+					@media @tablet {
+						font-size: bkscale(@font-swatch6-font-size, 0.8);
+					}
+					
+				}
+				margin-right: 0;
+				&:after {
+					display: none;
+				}
+				@media @tablet {
+					padding: @extendednavigation-pull-vm 0;
+				}
+				// Folder arrow icon
+				& > .text:after {
+					display: inline-block;
+                    content: "";
+                   	width: 0;
+                   	height: 0;
+                    border: 6px solid transparent;
+                    border-top-color: @color-swatch6;
+                    margin-left: 0.4em;
+				}
+			}
+
+		
+
+			@media @tablet {
+				border-top: 1px solid lighten(@color-swatch1, 20%);
+				padding: 0;
+			}
+
+			
+			
+			// Folder open
+			// drop icon
+			&:hover ul:before {
+				@drop-icon-size: 8px;
+				content: "";
+               	width: 0;
+               	height: 0;
+                border: @drop-icon-size solid transparent;
+                margin-left: -(@drop-icon-size / 2);
+                border-bottom-color: @color-swatch1;
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: -(@drop-icon-size + 10);
+			}
+			&:hover ul {
+				padding: 0;
+				background: @color-swatch2;
+				box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.10);
+				border-top: 4px solid @color-swatch1;
+
+				li a {
+					padding-top: @extendednavigation-pull-vm;
+					padding-bottom: @extendednavigation-pull-vm;
+				}
+				
+				@media @tablet {
+					bbox-shadow: none;
+					display: block;
+					position: relative;
+					z-index: 500;
+					padding: 0;
+					margin: @extendednavigation-pull-vm 0 -(@extendednavigation-pull-vm + 3) 0;
+					min-width: 140px;
+					box-shadow: none;
+					border-bottom: 4px solid @color-swatch1;
+				}
+			}
+
+			// Link
+			a {
+				
+				
+			}
+
+			a:hover {
+				
+			}
+		}
+	}
+
+	// Pull Menu
+	@pull-icon-size: 60px;
+	@pull-icon-hamburger-size: 36px;
+
+
+	a.pull {
+	    display: none;
+	    @media @tablet {
+	        display: block;
+	        margin: 0 0 0 -(@pull-icon-size /2);
+	        width: @pull-icon-size;
+	        height: @pull-icon-size;
+	        position: absolute;
+	        top: 7px;
+	        left: 50%;
+			background: @color-swatch3;
+			border-radius: 50%;
+
+	        &:hover {
+	           cursor: pointer;
+	        }
+	        &:after, &:before {
+	            content: '';
+	            position: absolute;
+	            width: @pull-icon-hamburger-size;
+	            height: 3px;
+	            background: @color-swatch2;
+	            top: 50%;
+	            left: 50%;
+	            margin: -(@pull-icon-hamburger-size / 4.4) 0 0 -(@pull-icon-hamburger-size / 2);
+	            box-shadow: 0 6px 0 @color-swatch2, 0 12px 0 @color-swatch2;
+	        }
+	        &:before {
+	        	display: none;
+	        }
+        }
+    }
+
+	// Pull Menu Open
+	ul.open {
+		margin-bottom: -(@extendednavigation-bottom-m);
+	}
+
+    ul[style*="display: block"] + a.pull {
+    	 @media @tablet {
+    	 	// Cross
+    	 	&:after, &:before {
+    	 		  box-shadow: none;
+    	 		  margin: -(@pull-icon-hamburger-size / 11) 0 0 -(@pull-icon-hamburger-size / 2);
+    	 	}
+    	 	// Cross Line 1
+    	 	&:after {
+	            -webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+    	 	}
+    	 	// Cross Line 2
+    	 	&:before {
+    	 		display: block;
+	            -webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+    	 	}
+    	 }
+    }
+}
+
+
+// ================================================================================================
+// Widget: Home Feature
+
+.home-feature .widget.feature {
+	.content {
+		// Left fade
+		&:before {
+			display: block;
+			content: "";
+			width: 50%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			background: @color-swatch1;
+			opacity: 0.8;
+		}
+		// Right Dot Fade
+		&:after {
+			display: block;
+			content: "";
+			width: 50%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			background-image: image('/images/pattern-dot.png');
+			opacity: 0.4;
+		}
+
+		.spare.wrapper {
+			position: relative;
+			display: block;
+			width: 50%;
+			text-align: right;
+			h2 {
+				margin-right: @layout-v-space;
+				color: @color-swatch2;
+				span {
+					padding: 0;
+					background: transparent;
+					color: @color-swatch2;
+				}
+			}
+			h3 {
+				margin-right: @layout-v-space;
+				span {
+					padding: 0;
+					background: transparent;
+					color: @color-swatch2;
+				}
+			}
+			.feature-btn {
+				margin-right: @layout-v-space;
+				display: block;
+				margin-top: 20px;
+				button {
+					border-radius: 150px;
+					position: relative;
+					padding: 12px 22px 12px 50px;
+					&:before {
+						content: "";
+						display: block;
+						width: 30px;
+						height: 30px;
+						position: absolute;
+						left: 8px;
+						top: 50%;
+						margin-top: -15px;
+						border-radius: 50%;
+						background-image: image('/images/ui-button.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						background-color: @color-swatch1;
+					}
+					.btnText {
+		
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// ================================================================================================
+// Footer
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: top;
+	flex-wrap: wrap;
+
+	padding: @layout-v-space;
+	background: darken(@color-swatch1, 6%);
+	.company {
+		
+		.logo.widget, .companyname.widget {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.logo.widget {
+			-webkit-transform: scale(0.65);
+			-moz-transform: scale(0.65);
+			-o-transform: scale(0.65);
+			-ms-transform: scale(0.65);
+			transform: scale(0.65);
+		}
+		.widget.companyname {
+			a {
+				font-size: bkscale(@font-swatch10-font-size,0.65);
+				line-height: bkscale(@font-swatch10-line-height,0.65);
+				color: @color-swatch2;
+			}
+		}
+	}
+	.footer-profile {
+
+	}
+}
+
+
+
+
