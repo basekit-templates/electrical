@@ -144,9 +144,15 @@ body {
 				display: inline-block;
 				vertical-align: middle;
 				margin-right: 0.4em;
+				background-repeat: no-repeat;
 				@media @retina {
 					background-image: image('/images/ico-phone_@2x.png');
-					background-size: 16px auto;
+					background-size: 100% auto;
+				}
+				@media @mobile {
+					width: 10px;
+					height: 11px;
+					background-size: 100% auto;
 				}
 			}
 		}
@@ -156,6 +162,7 @@ body {
 			&:before {
 				content: "";
 				background-image: image('/images/ico-mail.png');
+				background-repeat: no-repeat;
 				width: 17px;
 				height: 13px;
 				display: inline-block;
@@ -163,7 +170,12 @@ body {
 				margin-right: 0.4em;
 				@media @retina {
 					background-image: image('/images/ico-mail_@2x.png');
-					background-size: 16px auto;
+					background-size: 100% auto;
+				}
+				@media @mobile {
+					width: 10px;
+					height: 8px;
+					background-size: 100% auto;
 				}
 			}
 		}
