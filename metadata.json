@@ -2,6 +2,7 @@
 	"name":"Electrical",
 	"thumbnail":"electrical.png",
 	"screenshot":"electrical.png",
+	"templateType":"general",
 	"tags": {
 		"en": ["electronic", "electrical", "dark", "technical", "engineering", "contractor", "service", "inverted"]
 	},
@@ -102,7 +103,7 @@
 			"font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
 			"font-size": "16px",
 			"font-weight": "400",
-			"line-height": "30px",
+			"line-height": "25px",
 			"color": "@color-swatch5",
 			"background-color": "@color-swatch5",
 			"background-color-hover": "@color-swatch5",
