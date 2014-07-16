@@ -245,14 +245,22 @@ button.btn, .contactform button.btn, .widget.feature .feature-bgimg .content but
 	}
 	input {
 		margin-bottom: 1em;
+		height: 42px;
+	}
+	textarea {
+		min-height: 5em;
+		padding: 10px 5px 10px 15px;
 	}
 	input, textarea {
-		border-radius: 7px;
-		color: @color-swatch1;
-		&:focus {
-			border-color: @color-swatch1;
-			background-color: lighten(@color-swatch1, 60%);
-		}
+		color: @color-swatch5;
+		border: 1px solid darken(@color-swatch2,10%);
+		background-color: darken(@color-swatch1, 5%);
+		border-radius: 30px;
+        display: block;
+		vertical-align: top;
+	    min-width: 160px;
+	    padding: 5px 5px 5px 15px;
+        -webkit-appearance: none;
 	}
 	button.btn {
 		margin-top: 1em;
@@ -963,6 +971,7 @@ button.btn, .contactform button.btn, .widget.feature .feature-bgimg .content but
 	
 
         label {
+        	font-size: 18px; 
             display: block;
             margin-right: 1em;
             -webkit-box-ordinal-group: 2;
@@ -979,31 +988,23 @@ button.btn, .contactform button.btn, .widget.feature .feature-bgimg .content but
 		    -ms-flex-item-align: center;
 		    align-self: center;
 		    position: relative;
-		    top: -0.4em;
+		    top: -0.3em;
         }
         input {
-  
-            height: 37px;
+			color: @color-swatch5;
+			border: 1px solid darken(@color-swatch2,10%);
+			background-color: darken(@color-swatch1, 5%);
+			border-radius: 30px;
+
             display: block;
-           
-           	color: @color-swatch5;
-
-    
-			border: 1px solid darken(@color-swatch2,10%);
-			border-radius: 30px;
-
+           	
 			margin-right: 0.4em;
-			border: 1px solid darken(@color-swatch2,10%);
-			border-radius: 30px;
-			height: 46px;
+			
 			vertical-align: top;
 		    height: 42px;
-		    width: 40%;
 		    min-width: 160px;
-		    background-color: darken(@color-swatch1, 5%);
-
+		   
             -webkit-appearance: none;
-            
             
             -webkit-box-ordinal-group: 3;
 		    -moz-box-ordinal-group: 3;
@@ -1018,9 +1019,6 @@ button.btn, .contactform button.btn, .widget.feature .feature-bgimg .content but
 		    -webkit-align-self: auto;
 		    -ms-flex-item-align: auto;
 		    align-self: auto;
-
-
-
         }
 
         button {
