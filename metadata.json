@@ -22,13 +22,13 @@
             "color7":"#FEFF18"
         },
         "Swatch 2": {
-           	"color1":"#3a6660",
+           	"color1":"#2f5953",
             "color2":"#ffffff",
-            "color3":"#ffbd23",
+            "color3":"#ffb400",
             "color4":"#FEFF18",
             "color5":"#ffffff",
-            "color6":"#ffbd23",
-            "color7":"#ffbd23"
+            "color6":"#ffb400",
+            "color7":"#ffb400"
         },
         "Swatch 3": {
             "color1":"#3f3f3f",
@@ -125,7 +125,7 @@
 			"font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
 			"font-size": "16px",
 			"font-weight": "700",
-			"line-height": "20px",
+			"line-height": "35px",
 			"color": "@color-swatch1",
 			"background-color": "@color-swatch3",
 			"background-color-hover": "@color-swatch3",

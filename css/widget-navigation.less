@@ -1,0 +1,215 @@
+// ================================================================================================
+// Widget: EXTENDED NAVIGATION
+@extendednavigation-pull-vm: 6px;
+@extendednavigation-v-space: 16px;
+
+// Cancel floating
+div.widget .extendednavigation ul.align-left, div.widget.extendednavigation ul.align-left,
+div.widget .extendednavigation ul.align-right, div.widget.extendednavigation ul.align-right {
+	float: none !important;
+}
+
+.widget.extendednavigation {
+	margin-bottom: 0;
+	@media @tablet {
+		padding-top: @pull-icon-size;
+	}
+
+	.extendednavigation > ul {
+		display: block;
+		background: @color-swatch6;
+		border-radius: 200px 0 0 200px;
+		padding-left: @extendednavigation-v-space*2;
+		padding-right: @layout-v-space / 2;
+		
+		@media @bp-extendednav {
+			border-radius: 200px;
+			display: block;
+			padding: 0 @layout-v-space;
+		}
+		@media @tablet {
+			display: none;
+			border-radius: 0;
+			padding: 0;
+
+		}
+	}
+
+	
+
+	ul {
+		&.align-center, &.align-left, &.align-right {
+			
+		}
+
+		// Menu aligning
+		&.align-center {
+			text-align: center;
+		}
+		&.align-left{
+			text-align: left;
+		}
+		&.align-right {
+			text-align: right;
+		}
+
+		// Menu Item
+		li {
+			float: none;
+			display: inline-block;
+
+			@media @tablet {
+				padding-top: 0;
+				padding-bottom: 0;
+				border-bottom: 1px solid darken(@color-swatch3, 10%);
+			}
+			&:last-of-type {
+				border-bottom-image: none;
+			}
+
+			a {
+				padding: 0 @extendednavigation-v-space;
+				&:hover {
+					background-color: darken(@color-swatch3, 10%);
+				}
+				@media @tablet {
+					padding: 0 @extendednavigation-v-space * 2;
+				}
+			}
+
+			// Folder item
+			&.folder {
+				& > .text {
+					padding: 0 @extendednavigation-v-space;
+					@media @tablet {
+						padding: 0 @extendednavigation-v-space * 2;
+					}
+					
+				}
+				margin-right: 0;
+				&:after {
+					display: none;
+				}
+				// Folder arrow icon
+				& > .text:after {
+					display: inline-block;
+                    content: "";
+                   	width: 15px;
+                   	height: 15px;
+                    margin-left: 0.4em;
+                    background-image: image('/images/ui-extnav.png');
+				}
+				&:hover {
+					background-color: darken(@color-swatch3, 10%);
+				}
+			}
+			// Folder open
+			
+			&:hover ul {
+				padding: 0;
+				background-color: darken(@color-swatch3, 10%);
+				border-radius: 0 0 10px 10px;
+				overflow: hidden;
+
+				li {
+					border-top: 1px solid darken(@color-swatch3, 14%);
+					border-bottom-image: none;
+				}
+
+				li a {
+					padding-top: @extendednavigation-pull-vm;
+					padding-bottom: @extendednavigation-pull-vm;
+					&:hover {
+						background-color: darken(@color-swatch3, 14%);
+					}
+					.text {
+						line-height: bkscale(@font-swatch6-line-height,0.6);
+					}
+				}
+				
+				@media @tablet {
+					bbox-shadow: none;
+					display: block;
+					position: relative;
+					z-index: 500;
+					padding: 0;
+					margin: 0;
+					min-width: 300px;
+
+				}
+			}
+		}
+	}
+
+	// Hamburger
+	@pull-icon-size: 50px;
+	@pull-icon-hamburger-size: 36px;
+
+
+	a.pull {
+	    display: none;
+	    @media @tablet {
+	        display: block;
+	        width: @pull-icon-size;
+	        height: @pull-icon-size;
+			background: @color-swatch3;
+			border-radius: 6px 0 0 6px;
+			position: absolute;
+			top: 0;
+			right: 0;
+
+	        &:hover {
+	           cursor: pointer;
+	        }
+	        // Hamburger Bun and Meat
+	        &:after, &:before {
+	            content: '';
+	            position: absolute;
+	            width: @pull-icon-hamburger-size;
+	            height: 4px;
+	            background: @color-swatch1;
+	            top: 50%;
+	            left: 50%;
+	            margin: -(@pull-icon-hamburger-size / 3.5) 0 0 -(@pull-icon-hamburger-size / 2);
+	            box-shadow: 0 8px 0 @color-swatch1, 0 16px 0 @color-swatch1;
+	        }
+	        &:before {
+	        	display: none;
+	        }
+        }
+    }
+
+	// Pull Menu Open
+	ul.open {
+		display: block;
+	}
+	
+	// Hamburger to cross
+    ul[style*="display: block"] + a.pull, ul.open + a.pull {
+    	 @media @tablet {
+    	 	border-radius: 6px 0 0 0;
+    	 	// Cross
+    	 	&:after, &:before {
+    	 		  box-shadow: none;
+    	 		  margin: -(@pull-icon-hamburger-size / 11) 0 0 -(@pull-icon-hamburger-size / 2);
+    	 	}
+    	 	// Cross Line 1
+    	 	&:after {
+	            -webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				-o-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+    	 	}
+    	 	// Cross Line 2
+    	 	&:before {
+    	 		display: block;
+	            -webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				-o-transform: rotate(-45deg);
+				-ms-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+    	 	}
+    	 }
+    }
+}

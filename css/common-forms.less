@@ -1,0 +1,257 @@
+// =============================================================================================
+// FORMS
+
+
+// -----------------------------------------------------------
+// Buttons
+.widget.feature .feature-bgimg .content button,
+.contactform button.btn,
+.widget.button button,
+.widget .btn,
+.widget.profile form button,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a,
+.widget.dropbox button,
+.signupform fieldset button,
+.blog-search-submit-button,
+.widget.ecomproduct .ecom-product .btn,
+.widget.ecomcheckout .checkout-order-button,
+.widget.ecombasket .ecombasket-list-container .ecombasket-checkout-wrap .ecombasket-checkout-link,
+.widget.ecomcategorieslist ul li a,
+.blog-post-more-link a,
+.blog-list-footer .paginate-older,
+.widget.clicktocall a
+ {
+	border-radius: 50px;
+	height: (@font-swatch7-font-size * 2.5);
+	line-height: (@font-swatch7-font-size * 2.5);
+	padding: 0 1.6em 0 3.5em;
+	display: inline-block;
+	cursor: pointer;
+	font-family: @font-swatch7-font-family;
+	font-weight: @font-swatch7-font-weight;
+	background-color: @color-swatch3;
+	color: @font-swatch7-color;
+	font-size: @font-swatch7-font-size;
+	border: none;
+	margin: 0;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	position: relative;
+
+	// icon
+	&:before {
+		content: "+";
+		display: block;
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		background-color: @color-swatch1;
+		color: @color-swatch3;
+		border-radius: 50px;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 4px;
+		margin-top: -1em;
+	}
+
+	@media only screen and (max-width : 460px) {
+		padding: 0 1.2em 0 3.5em;
+		font-size: bkscale(@font-swatch7-font-size, 0.75);
+		height: (@font-swatch7-font-size * 2);
+		line-height: (@font-swatch7-font-size * 2);
+	} 
+
+	&:hover {
+		background-color: @color-swatch5;
+		text-decoration: none;
+	}
+}
+
+// Image buttons
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a,
+.widget.dropbox button,
+.widget.clicktocall a {
+	padding-left: 50px;
+	background-position: 18px center;
+	&:hover {
+		padding-left: 50px;
+		background-position: 18px center;
+	}
+}
+
+
+// No  + icon buttons
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a,
+.widget.dropbox button,
+.widget.clicktocall a {
+	&:before {
+		display: none;
+	}
+}
+
+
+// -----------------------------------------------------------
+// Text Inputs
+.contactform input, .contactform textarea,
+.widget.profile form fieldset input.email,
+.signupform fieldset input.email,
+.blogsearch input.blog-search-input,
+.widget input[type="text"],
+.widget input[type="email"],
+.productlist-filter .productlist-search input,
+.signupform fieldset input {
+	@inputBorderSize: 1px;
+	background-color: darken(@color-swatch1, 5%);
+	border: @inputBorderSize solid #D8D8D8;
+	border-radius: ((@font-swatch7-font-size * 2.5) / 2);
+	padding: 0 1em;
+	margin: 0;
+	margin-right: 0.6em;
+	height: (@font-swatch7-font-size * 2.5 );
+	line-height: (@font-swatch7-font-size * 2.5 );
+	text-indent: 0;
+	color: @color-swatch5;
+
+
+	@media only screen and (max-width : 460px) {
+		font-size: bkscale(@font-swatch7-font-size, 0.75);
+		height: (@font-swatch7-font-size * 2);
+		line-height: (@font-swatch7-font-size * 2);
+	} 
+
+
+	&:hover {
+		border: 1px solid @color-swatch3;
+		
+	}
+
+	&:focus {
+		border: 1px solid @color-swatch2;
+		background-color: darken(@color-swatch1, 10%);
+		color:  @color-swatch5;
+	}
+}
+
+
+
+
+.contactform textarea {
+	line-height: bkscale(@font-swatch7-line-height, 0.7);
+	min-height: 10em;
+	@media only screen and (max-width : 460px) {
+		border-radius: 16px;
+		line-height: bkscale(@font-swatch7-line-height, 0.5);
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	} 
+}
+
+
+// -----------------------------------------------------------
+// Labels
+.contactform label,
+.signupform fieldset label,
+.blog-search-form label,
+.widget.ecomcheckout .delivery label,
+.ecom-product-vartitle {
+    font-family: @font-swatch4-font-family;
+    font-size: @font-swatch4-font-size;
+    font-weight: @font-swatch4-font-weight;
+    line-height: @font-swatch4-line-height;
+    color: @font-swatch4-color;
+    letter-spacing: @font-swatch4-letter-spacing;
+    @media only screen and (max-width : 460px) {
+		line-height: bkscale(@font-swatch4-line-height, 0.8);
+		font-size:bkscale(@font-swatch4-font-size, 0.8);
+	} 
+}
+
+// -----------------------------------------------------------
+// Selects
+.widget.ecomproductslist .productlist-filter,
+.widget.ecomcheckout .delivery,
+.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation
+{
+	& select {
+		-moz-appearance: none;
+		text-indent: 0.01px;
+		-webkit-appearance: none;
+		text-overflow: '';
+		cursor: pointer;
+		position: relative;
+		background-image: image('/images/ui-select.png');
+		background-repeat: no-repeat;
+		background-position: right center;
+		margin: 0;
+		padding: 0 64px 0 1em;
+		border: 2px solid @color-swatch3;
+		background-color: @color-swatch1;
+		color: @color-swatch5;
+		
+		height: (@font-swatch7-font-size * 2.5 );
+		line-height: 1;
+		
+		border-radius: 30px;
+		position: relative;
+		display: inline-block;
+		font-family: @font-swatch7-font-family;
+		font-size: @font-swatch7-font-size;
+		font-weight: @font-swatch7-font-weight;
+
+		webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		@media only screen and (max-width : 460px) {
+			font-size: bkscale(@font-swatch7-font-size, 0.75);
+			height: (@font-swatch7-font-size * 2);
+			
+		} 
+
+		&:hover {
+			border-color: @color-swatch2;
+			
+		}
+
+		&:focus {
+			border-color: @color-swatch2;
+			background-color: lighten(@color-swatch2, 60%);
+			color:  @color-swatch2;
+		}
+	}
+}
+
+// Hides *custom* dropdown arrow in Firefox 30 and above
+@supports (-moz-appearance:meterbar) and (background-blend-mode:difference,normal) {
+	.widget.ecomproductslist .productlist-filter,
+	.widget.ecomcheckout .delivery,
+	.widget.ecomproduct .ecom-product .ecom-product-info .ecom-product-variation {
+		& select {
+			background-image: none;
+		}
+	}
+}
+
+// -----------------------------------------------------------
+// Placeholders
+input::-webkit-input-placeholder {
+   color: mix(@color-swatch1, @color-swatch2, 16%);
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+   color: mix(@color-swatch1, @color-swatch2, 16%);
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: mix(@color-swatch1, @color-swatch2, 16%);
+}
+
+input:-ms-input-placeholder {  
+   color: mix(@color-swatch1, @color-swatch2, 16%);
+}
+
