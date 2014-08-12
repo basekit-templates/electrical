@@ -475,7 +475,6 @@
 	.gallery-widget {
 		.square {
 			.inner {
-
 				.title, .description {
 					padding: 0;
 					@media @tablet {
@@ -489,34 +488,8 @@
 				}
 
 				.title {
-					color: @color-swatch2;
-					background-color: fade(@color-swatch1,50%);
+					color: @color-swatch3;
 
-				}
-				.description {
-					display: block;
-					opacity: 0;
-					position: absolute;
-					color: @color-swatch5;
-					left: 0px;
-					right: 0px;
-					bottom: -100%;
-					overflow: hidden;
-					margin-bottom: 0;
-					background: fade(@color-swatch1, 80%);
-					padding: 10px;
-					text-align: center;
-					-webkit-transition: all 0.3s ease-out;
-					-moz-transition: all 0.3s ease-out;
-					-o-transition: all 0.3s ease-out;
-					transition: all 0.3s ease-out;
-					@media @mobile {
-						display: none;
-					}
-				}
-				&:hover .description {
-					bottom: 0;
-					opacity: 1;
 				}
 			}
 		}
