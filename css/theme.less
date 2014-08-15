@@ -86,15 +86,13 @@ body > .wrap {
 	    -ms-flex-align: center;
 	    align-items: center;
 
-
-
-
-
 		padding: 0.4em 0;
-		
-
 		@color-profile-bg: lighten(@color-swatch1, 10%);
 		background: @color-profile-bg;
+
+		@media @mobile {
+			display: block;
+		}
 
 		.widget {
 			margin-bottom: 0;
@@ -121,10 +119,6 @@ body > .wrap {
 			}
 		}
 
-
-		.p01, .p02, .p03 {
-			
-		}
 		.p01 {
 			-webkit-box-flex: 1;
 			-moz-box-flex: 1;
