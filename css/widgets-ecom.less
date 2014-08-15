@@ -470,7 +470,6 @@
 
 // ======= Widget: e-com Featured Products
 .widget.ecomfeaturedproducts {
-	
 	.ecom-featuredproducts-header {
 		h2 {
 			text-align: center;
@@ -521,9 +520,10 @@
 			// Image
 			.ecom-featuredproducts-image-wrap {
 				margin-bottom: 0;
-				width: 90%;
+				width: 100%;
 				background-color: @color-swatch2;
-				border-radius: 6px;
+				border: 10px solid @color-swatch2;
+				border-radius: 6px 6px 0 0;
 				.ecom-featuredproducts-image {
 					// hidden
 				}
@@ -536,10 +536,8 @@
 					font-size: bkscale(@font-swatch2-font-size, 0.6);
 					background: @color-swatch6;
 					color: @color-swatch1;
-					border-radius: 6px;
-					margin-left: 40px;
-					position: relative;
-					top: -12px;
+					border-radius: 0 0 6px 6px;
+					
 				}
 				// Price
 				.ecom-featuredproducts-price {
