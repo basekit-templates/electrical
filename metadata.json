@@ -2,7 +2,7 @@
 	"name":"Electrical",
 	"thumbnail":"electrical.png",
 	"screenshot":"electrical.png",
-	"templateType":"general",
+	"templateType":"standard",
 	"pageTypes": ["home"], 
 	"tags": {
 		"en": ["electronic", "electrical", "dark", "technical", "engineering", "contractor", "service", "inverted"]
